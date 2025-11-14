@@ -129,6 +129,19 @@
             height: 40px;
             margin: 10px;
             border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        /* 🔵 BLUE GLOW FOR DISCORD */
+        .discord-icon:hover {
+            box-shadow: 0px 0px 20px #00a2ff;
+            transform: scale(1.1);
+        }
+
+        /* 🔴 RED GLOW FOR YOUTUBE */
+        .youtube-icon:hover {
+            box-shadow: 0px 0px 20px red;
+            transform: scale(1.1);
         }
 
         .footer-profile {
@@ -248,8 +261,17 @@
     </div>
 
     <div class="footer-icons">
-        <img src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/images%20(2).jpeg">
-        <img src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/YouTube_play_button_square_(2013-2017).svg.png">
+
+        <!-- DISCORD CLICKABLE ICON + BLUE GLOW -->
+        <a href="https://discord.com/users/1428360853069107264" target="_blank">
+            <img class="discord-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/images%20(2).jpeg">
+        </a>
+
+        <!-- YOUTUBE CLICKABLE ICON + RED GLOW -->
+        <a href="https://www.youtube.com/@AcxTheScripter" target="_blank">
+            <img class="youtube-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/YouTube_play_button_square_(2013-2017).svg.png">
+        </a>
+
     </div>
 
     <div style="margin-top:10px; font-size:0.9rem; color:#aaa;">
