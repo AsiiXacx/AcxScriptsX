@@ -1,307 +1,297 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AcxScriptsX</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: white;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-        }
+<!DOCTYPE html>  
+<html lang="en">    
+<head>    
+    <meta charset="UTF-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>AcxScriptsX</title>    
+    <style>    
+        body {    
+            margin: 0;    
+            font-family: Arial, sans-serif;    
+            background-color: #000;    
+            color: white;    
+        }  
 
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 0;
-            text-align: left;
-        }
+    /* HEADER */    
+    .header {    
+        display: flex;    
+        align-items: center;    
+        justify-content: space-between;    
+        padding: 20px;    
+    }    
 
-        .profile-pic {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #444;
-        }
+    /* 🔥 UPDATED TITLE (black text + white outline) */
+    .title {    
+        font-size: 3rem;    
+        font-weight: bold;    
+        margin: 0;    
+        color: black;
+        text-shadow: 
+            -2px -2px 0 white,
+            2px -2px 0 white,
+            -2px 2px 0 white,
+            2px 2px 0 white;
+    }
 
-        .search-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin-top: 10px;
-        }
+    .profile-pic {    
+        width: 60px;    
+        height: 60px;    
+        border-radius: 50%;    
+        object-fit: cover;    
+        border: 2px solid #444;    
+    }    
+  
+    /* SEARCH BAR */    
+    .search-container {    
+        display: flex;    
+        justify-content: center;    
+        width: 100%;    
+        margin-top: 10px;    
+    }    
+  
+    .search-bar {    
+        width: 92%;    
+        padding: 12px;    
+        border-radius: 14px;    
+        background-color: #000;    
+        border: 2px solid #333;    
+        color: #ddd;    
+        font-size: 1rem;    
+    }    
+  
+    /* SCRIPT BOXES */    
+    .scripts {    
+        width: 92%;    
+        margin: 20px auto;    
+    }    
+  
+    .script-card {    
+        padding: 20px;    
+        border: 1px solid #333;    
+        border-radius: 16px;    
+        margin-bottom: 28px;    
+        background-color: #050505;    
+    }    
+  
+    .script-title {    
+        font-size: 1.25rem;    
+        font-weight: bold;    
+        margin-bottom: 14px;    
+    }    
+  
+    /* ⭐ FIXED INNER CODE BOX (NO MORE STRETCHING!) */    
+    .script-code {    
+        background-color: #000;    
+        border: 1px solid #222;    
+        padding: 14px;    
+        border-radius: 12px;    
+        font-family: monospace;    
+        white-space: pre-wrap;    
+        font-size: 0.88rem;    
+        line-height: 1.35rem;    
+        overflow-x: auto;
 
-        .search-bar {
-            width: 90%;
-            padding: 12px;
-            background-color: #000;
-            border: 2px solid #444;
-            border-radius: 12px;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            display: block;
-            margin: 0 auto;
-        }
+        /* FIXES STRETCHING ISSUE */
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }    
+  
+    .copy-btn {    
+        margin-top: 14px;    
+        padding: 10px 20px;    
+        border-radius: 22px;    
+        background-color: #222;    
+        border: 1px solid #444;    
+        color: white;    
+        cursor: pointer;    
+        font-size: 0.95rem;    
+    }    
+    .copy-btn:active {    
+        background-color: #333;    
+    }    
+  
+    /* FOOTER */    
+    .footer {    
+        margin-top: 60px;    
+        text-align: center;    
+        padding-bottom: 40px;    
+    }    
+  
+    .footer-top {    
+        display: flex;    
+        justify-content: center;    
+        gap: 12px;    
+        align-items: center;    
+    }    
+  
+    .footer-name {    
+        font-size: 1.3rem;    
+        font-weight: bold;    
+        color: red;    
+        text-shadow: 0 0 15px red, 0 0 25px red;    
+    }    
+  
+    .footer-profile {    
+        width: 45px;    
+        height: 45px;    
+        border-radius: 50%;    
+        border: 2px solid #444;    
+        object-fit: cover;    
+    }    
+  
+    .footer-icons img {    
+        width: 40px;    
+        height: 40px;    
+        margin: 10px;    
+        border-radius: 8px;    
+    }    
+  
+    .discord-icon { box-shadow: 0 0 20px #00a2ff; }    
+    .youtube-icon { box-shadow: 0 0 20px red; }    
+  
+</style>  
+  
+</head>    
+<body>  
 
-        .script-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+<!-- HEADER -->  
+<div class="header">    
+    <div class="title">AcxScriptsX</div>    
+    <img class="profile-pic" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/60cb79a8-9675-42a9-bc0a-8e77162ebce6.jpeg">    
+</div>  
 
-        .script-code {
-            background-color: #000;
-            border: 1px solid #333;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: monospace;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-x: auto;
-            font-size: 0.9rem;
-        }
+<!-- SEARCH -->  
+<div class="search-container">    
+    <input class="search-bar" type="text" placeholder="Search scripts..." />    
+</div>  
 
-        .copy-btn {
-            margin-top: 12px;
-            padding: 10px 16px;
-            background-color: #222;
-            border: 1px solid #444;
-            color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        .copy-btn:active {
-            background-color: #333;
-        }
-
-        .scripts {
-            display: block;
-            width: 90%;
-            margin: 20px auto 0 auto;
-        }
-
-        .script-card {
-            margin: 0 auto 25px auto;
-            padding: 15px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        /* FOOTER STYLE */
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-bottom: 40px;
-        }
-
-        .footer-top {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .footer-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: red;
-        }
-
-        .footer-icons img {
-            width: 40px;
-            height: 40px;
-            margin: 10px;
-            border-radius: 8px;
-            transition: 0.3s ease;
-        }
-
-        /* 🔵 BLUE GLOW FOR DISCORD */
-        .discord-icon:hover {
-            box-shadow: 0px 0px 20px #00a2ff;
-            transform: scale(1.1);
-        }
-
-        /* 🔴 RED GLOW FOR YOUTUBE */
-        .youtube-icon:hover {
-            box-shadow: 0px 0px 20px red;
-            transform: scale(1.1);
-        }
-
-        .footer-profile {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #444;
-        }
-
-    </style>
-</head>
-<body>
-
-<div class="header">
-    <div class="title">AcxScriptsX</div>
-    <img class="profile-pic" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/60cb79a8-9675-42a9-bc0a-8e77162ebce6.jpeg" alt="Profile Picture">
-</div>
-
-<div class="search-container">
-    <input class="search-bar" type="text" placeholder="Search scripts..." />
-</div>
-
+<!-- SCRIPTS -->  
 <div class="scripts">
 
-    <!-- Tower of Hell -->
-    <div class="script-card">
-        <div class="script-title">Tower of Hell</div>
-        <pre class="script-code" id="towerofhell">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/TowerOfHellScriptOP"))()</pre>
-        <button class="copy-btn" onclick="copyScript('towerofhell')">Copy Script</button>
-    </div>
+<!-- Tower of Hell -->    
+<div class="script-card">    
+    <div class="script-title">Tower of Hell</div>    
+    <pre class="script-code" id="towerofhell">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/TowerOfHellScriptOP"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('towerofhell')">Copy Script</button>    
+</div>    
+  
+<!-- FPS Flick -->    
+<div class="script-card">    
+    <div class="script-title">[FPS] Flick</div>    
+    <pre class="script-code" id="fpsflick">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FlickAcxV1.3"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('fpsflick')">Copy Script</button>    
+</div>    
 
-    <!-- FPS Flick -->
-    <div class="script-card">
-        <div class="script-title">[FPS] Flick</div>
-        <pre class="script-code" id="fpsflick">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FlickAcxV1.3"))()</pre>
-        <button class="copy-btn" onclick="copyScript('fpsflick')">Copy Script</button>
-    </div>
+<!-- Jump Button -->    
+<div class="script-card">    
+    <div class="script-title">Jump Button (Open Source)</div>    
+    <pre class="script-code" id="jumpbtn">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/JumpButton(Open%20Source)"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('jumpbtn')">Copy Script</button>    
+</div>    
+  
+<!-- FPS Checker -->    
+<div class="script-card">    
+    <div class="script-title">FPS Checker (Open Source)</div>    
+    <pre class="script-code" id="fpscheck">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FPS-Checker(OpenSource)"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('fpscheck')">Copy Script</button>    
+</div>    
 
-    <!-- Jump Button -->
-    <div class="script-card">
-        <div class="script-title">Jump Button (Open Source)</div>
-        <pre class="script-code" id="jumpbtn">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/JumpButton(Open%20Source)"))()</pre>
-        <button class="copy-btn" onclick="copyScript('jumpbtn')">Copy Script</button>
-    </div>
+<!-- Coordinates -->    
+<div class="script-card">    
+    <div class="script-title">Coordinates (Open Source)</div>    
+    <pre class="script-code" id="coords">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Coordinates(OpenSource)"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('coords')">Copy Script</button>    
+</div>    
 
-    <!-- FPS Checker -->
-    <div class="script-card">
-        <div class="script-title">FPS Checker (Open Source)</div>
-        <pre class="script-code" id="fpscheck">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FPS-Checker(OpenSource)"))()</pre>
-        <button class="copy-btn" onclick="copyScript('fpscheck')">Copy Script</button>
-    </div>
+<!-- Pacifist -->    
+<div class="script-card">    
+    <div class="script-title">Dead Rails (Pacifist)</div>    
+    <pre class="script-code" id="pacifist">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/PacifistScript"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('pacifist')">Copy Script</button>    
+</div>    
 
-    <!-- Coordinates -->
-    <div class="script-card">
-        <div class="script-title">Coordinates (Open Source)</div>
-        <pre class="script-code" id="coords">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Coordinates(OpenSource)"))()</pre>
-        <button class="copy-btn" onclick="copyScript('coords')">Copy Script</button>
-    </div>
+<!-- ServerHop -->    
+<div class="script-card">    
+    <div class="script-title">Universal ServerHop</div>    
+    <pre class="script-code" id="serverhop">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Universal-ServerHop.lua"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('serverhop')">Copy Script</button>    
+</div>    
 
-    <!-- Dead Rails Pacifist -->
-    <div class="script-card">
-        <div class="script-title">Dead Rails (Pacifist)</div>
-        <pre class="script-code" id="pacifist">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/PacifistScript"))()</pre>
-        <button class="copy-btn" onclick="copyScript('pacifist')">Copy Script</button>
-    </div>
+<!-- Aimbot -->    
+<div class="script-card">    
+    <div class="script-title">Aimbot NPC Dead Rails (Open Source)</div>    
+    <pre class="script-code" id="aimbot">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Aimbot.lua"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('aimbot')">Copy Script</button>    
+</div>    
 
-    <!-- ServerHop -->
-    <div class="script-card">
-        <div class="script-title">Universal ServerHop</div>
-        <pre class="script-code" id="serverhop">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Universal-ServerHop.lua"))()</pre>
-        <button class="copy-btn" onclick="copyScript('serverhop')">Copy Script</button>
-    </div>
+<!-- Fake WallHop -->    
+<div class="script-card">    
+    <div class="script-title">Universal Fake-WallHop</div>    
+    <pre class="script-code" id="fakewall">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FakeWallHopScript"))()</pre>    
+    <button class="copy-btn" onclick="copyScript('fakewall')">Copy Script</button>    
+</div>    
 
-    <!-- Aimbot -->
-    <div class="script-card">
-        <div class="script-title">Aimbot NPC Dead Rails (Open Source)</div>
-        <pre class="script-code" id="aimbot">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/Aimbot.lua"))()</pre>
-        <button class="copy-btn" onclick="copyScript('aimbot')">Copy Script</button>
-    </div>
+<!-- DeadRails -->    
+<div class="script-card">    
+    <div class="script-title">DeadRails (OP)</div>    
+    <pre class="script-code" id="dropp">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/DeadRailsSimpleScriptV1."))()</pre>    
+    <button class="copy-btn" onclick="copyScript('dropp')">Copy Script</button>    
+</div>    
 
-    <!-- Fake WallHop -->
-    <div class="script-card">
-        <div class="script-title">Universal Fake-WallHop</div>
-        <pre class="script-code" id="fakewall">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/FakeWallHopScript"))()</pre>
-        <button class="copy-btn" onclick="copyScript('fakewall')">Copy Script</button>
-    </div>
+<!-- XY HUB -->    
+<div class="script-card">    
+    <div class="script-title">FORTLINE (XY HUB)</div>    
+    <pre class="script-code" id="xyhub">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/.XY%20HUB%20-%20FORTLINE.lua."))()</pre>    
+    <button class="copy-btn" onclick="copyScript('xyhub')">Copy Script</button>    
+</div>    
 
-    <!-- DeadRails OP -->
-    <div class="script-card">
-        <div class="script-title">DeadRails (OP)</div>
-        <pre class="script-code" id="dropp">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/DeadRailsSimpleScriptV1."))()</pre>
-        <button class="copy-btn" onclick="copyScript('dropp')">Copy Script</button>
-    </div>
-
-    <!-- XY HUB -->
-    <div class="script-card">
-        <div class="script-title">FORTLINE (XY HUB)</div>
-        <pre class="script-code" id="xyhub">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/.XY%20HUB%20-%20FORTLINE.lua."))()</pre>
-        <button class="copy-btn" onclick="copyScript('xyhub')">Copy Script</button>
-    </div>
-
-    <!-- Cheese Escape -->
-    <div class="script-card">
-        <div class="script-title">Cheese Escape 1</div>
-        <pre class="script-code" id="cheese">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/CheeseEscape1-Script."))()</pre>
-        <button class="copy-btn" onclick="copyScript('cheese')">Copy Script</button>
-    </div>
-
+<!-- Cheese Escape -->    
+<div class="script-card">    
+    <div class="script-title">Cheese Escape 1</div>    
+    <pre class="script-code" id="cheese">loadstring(game:HttpGet("https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/CheeseEscape1-Script."))()</pre>    
+    <button class="copy-btn" onclick="copyScript('cheese')">Copy Script</button>    
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    <div class="footer-top">
-        <img class="footer-profile" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/60cb79a8-9675-42a9-bc0a-8e77162ebce6.jpeg">
-        <div class="footer-name">AcxScriptsX</div>
-    </div>
+</div>  
 
-    <div class="footer-icons">
+<!-- FOOTER -->  
+<div class="footer">    
+    <div class="footer-top">    
+        <img class="footer-profile" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/60cb79a8-9675-42a9-bc0a-8e77162ebce6.jpeg">    
+        <div class="footer-name">AcxScriptsX</div>    
+    </div>  
 
-        <!-- DISCORD CLICKABLE ICON + BLUE GLOW -->
-        <a href="https://discord.com/users/1428360853069107264" target="_blank">
-            <img class="discord-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/images%20(2).jpeg">
-        </a>
+<div class="footer-icons">    
+    <a href="https://discord.com/users/1428360853069107264" target="_blank">    
+        <img class="discord-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/images%20(2).jpeg">    
+    </a>    
+  
+    <a href="https://www.youtube.com/@AcxTheScripter" target="_blank">    
+        <img class="youtube-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/YouTube_play_button_square_(2013-2017).svg.png">    
+    </a>    
+</div>    
+  
+<div style="color:#aaa; font-size:0.9rem;">    
+    © 2025 AcxScriptsX<br>All Rights Reserved.    
+</div>  
+  
+</div>  
 
-        <!-- YOUTUBE CLICKABLE ICON + RED GLOW -->
-        <a href="https://www.youtube.com/@AcxTheScripter" target="_blank">
-            <img class="youtube-icon" src="https://raw.githubusercontent.com/AsiiXacx/AcxScripter/refs/heads/main/YouTube_play_button_square_(2013-2017).svg.png">
-        </a>
+<script>    
+function copyScript(id) {    
+    const code = document.getElementById(id).innerText;    
+    navigator.clipboard.writeText(code).then(() => alert("Copied!"));    
+}    
+    
+document.querySelector('.search-bar').addEventListener('input', () => {    
+    const query = document.querySelector('.search-bar').value.toLowerCase();    
+    document.querySelectorAll('.script-card').forEach(card => {    
+        const title = card.querySelector('.script-title').innerText.toLowerCase();    
+        const code = card.querySelector('.script-code').innerText.toLowerCase();    
+        card.style.display = (title.includes(query) || code.includes(query)) ? "block" : "none";    
+    });    
+});    
+</script>  
 
-    </div>
-
-    <div style="margin-top:10px; font-size:0.9rem; color:#aaa;">
-        © 2025 AcxScriptsX.<br>
-        All Rights Reserved.
-    </div>
-</div>
-
-<script>
-    function copyScript(id) {
-        const code = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(code).then(() => alert('Copied!'));
-    }
-
-    function searchScripts() {
-        const query = document.querySelector('.search-bar').value.toLowerCase();
-        const cards = document.querySelectorAll('.script-card');
-
-        cards.forEach(card => {
-            const title = card.querySelector('.script-title')?.innerText.toLowerCase() || "";
-            const code = card.querySelector('.script-code')?.innerText.toLowerCase() || "";
-
-            card.style.display = (title.includes(query) || code.includes(query))
-                ? 'block'
-                : 'none';
-        });
-    }
-
-    document.querySelector('.search-bar').addEventListener('input', searchScripts);
-</script>
-
-</body>
+</body>    
 </html>
